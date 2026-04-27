@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo de Formulario con Fieldset</title>
+  </head>
+  <body>
+    <h1>Formulario de Consulta</h1>
+
+    <form action="/submit" method="post">
+      <!-- Agrupación de información personal -->
+      <fieldset>
+        <legend><b>Información Personal</b></legend>
+        <br />
+        <!-- Campo de texto para ingresar el nombre -->
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ingrese su nombre"
+        />
+
+        <br /><br />
+
+        <!-- Campo de texto para ingresar el apellido -->
+        <label for="apellido">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Ingrese su apellido"
+        />
+
+        <br /><br />
+
+        <!-- Campo para ingresar el DNI -->
+
+        <label for="dni">Ingrese su DNI:</label>
+        <input type="number" name="dni" id="ni" placeholder="Ingrese su DNI" />
+
+        <br /><br />
+
+        <!-- Campo de texto para ingresar la dirección -->
+
+        <label for="direccion">Domicilio:</label>
+        <input type="text" name="direccion" id="direccion" maxlength="30" />
+        <label for="numero">Nro:</label>
+        <input type="number" name="numero" id="number" />
+
+        <br /><br />
+
+        <!-- Campo de fecha para ingresar la fecha de nacimiento -->
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" />
+
+        <br /><br />
+
+        <!-- Campo de radio para seleccionar genero -->
+
+        <label for="genero">Selecciones su genero:</label>
+
+        <input type="radio" name="genero" value="M" />Masculino
+
+        <input type="radio" name="genero" value="F" />Femenino
+
+        <input type="radio" name="genero" value="O" />Otro
+
+        <br />
+        <br />
+
+        <!-- Campo tipo checkbox para seleccionar tipo de enfermedades -->
+
+        <fieldset>
+          <legend>Historia Clinica</legend>
+
+          <label for="enfermedades">Seleccione según corresponda:</label>
+          <br />
+          <input type="checkbox" name="enfermedades" value="hipertension" />
+          Hipertensión
+          <br />
+          <input type="checkbox" name="enfermedades" value="diabetes" />
+          Diabetes
+          <br />
+          <input type="checkbox" name="enfermedades" value="asma" /> Asma
+          <br />
+          <input
+            type="checkbox"
+            name="enfermedades"
+            value="enfermedadcardíaca"
+          />
+          Enfermedad cardíaca
+          <br />
+          <input
+            type="checkbox"
+            name="enfermedades"
+            value="problemasrespiratorios"
+          />
+          Problemas respiratorios
+          <br />
+          <input type="checkbox" name="enfermedades" value="epilepsia" />
+          Epilepsia
+          <br />
+          <input type="checkbox" name="enfermedades" value="ninguno" /> Ninguna
+          de las anteriores
+        </fieldset>
+        <br />
+
+        <fieldset>
+          <label for="tratamientos">Tratamientos/medicación:</label>
+          <br />
+          <input
+            type="checkbox"
+            name="tratamientos"
+            id="medicación"
+            value="medicacion"
+          />
+          Toma medicación
+          <input
+            type="checkbox"
+            name="tratamientos"
+            id="cronico"
+            value="cronico"
+          />
+          Tratamiento crónico
+          <input
+            type="checkbox"
+            name="tratamientos"
+            id="ninguno"
+            value="ninguno"
+          />
+          Ninguno
+        </fieldset>
+
+        <br />
+
+        <!-- Campo tipo checkbox para seleccionar tipo de alergias -->
+        
+        <fieldset>
+          <label for="alergias">Alergias</label>
+          <br />
+          <input type="checkbox" name="alergias" value="alergias" /> Alergias a
+          medicación
+          <input type="checkbox" name="alergias" value="alergiasalimentarias" />
+          Alergias alimentarias
+          <input type="checkbox" name="alergias" value="ninguna" /> Ninguna
+        </fieldset>
+      </fieldset>
+      <br />
+
+      <!-- Agrupación de información de contacto -->
+      <fieldset>
+        <legend>Información de Contacto</legend>
+
+        <!-- Campo para ingresar el correo electrónico -->
+        <label for="email">Correo Electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ingrese su correo electrónico"
+        />
+
+        <br /><br />
+
+        <!-- Campo para ingresar el número de teléfono -->
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="0123-456789"
+          pattern="[0-9]{4}-[0-9]{6}"
+          required
+        />
+      </fieldset>
+
+      <!-- Campos de tipo select para seleccionar consultas, fecha de turnos, franja horaria y especialidad -->
+
+      <br />
+      <fieldset>
+        <legend>Turnos</legend>
+        <label for="fecha_turno">Fecha de Turno:</label>
+        <input type="date" id="fecha_turno" name="fechadeturno" />
+        <br />
+        <br />
+        <label for="franja_horaria">Franja Horaria:</label>
+        <select name="franja_horaria">
+          <option value="08_16" selected>08:00-16:00</option>
+          <option value="16_00">16:00-00:00</option>
+          <option value="00_08">00:00-08:00</option>
+        </select>
+        <br />
+        <br />
+        <label for="medico">Especialidad:</label>
+        <select name="medico">
+          <option value="clinica" selected>Clínica médica</option>
+          <option value="cardiologia">Cardiología</option>
+          <option value="odontologia">Odontología</option>
+          <option value="oftalmologia">Oftalmología</option>
+          <option value="pediatria">Pediatría</option>
+          <option value="otra_especialida">Otra</option>
+        </select>
+      </fieldset>
+      <br />
+
+      <!-- Campo tipo textarea para detallar el tipo de consulta medica -->
+
+      <fieldset>
+        <legend>Mótivo de solicitud</legend>
+
+        <label for="comentarios"
+          >Explique el motivo de su solicitud para una cita médica:</label
+        ><br />
+        <textarea
+          name="comentarios"
+          id="comentarios"
+          cols="30"
+          rows="8"
+          placeholder="ingrese aqui su comentario"
+        ></textarea>
+        <br />
+        <sup
+          >lo que ingrese aquí es de carácter confidencial de paciente a
+          medico</sup
+        >
+      </fieldset>
+
+      <br />
+
+      <!-- Agrupación de acciones -->
+      <fieldset>
+        <legend>Acciones</legend>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="reset">Limpiar</button>
+
+        <!-- Botón para restablecer el formulario -->
+        <button type="submit">Enviar</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
